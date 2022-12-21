@@ -73,5 +73,24 @@ sudo make install
 - Standard Plugins: checks can be run from nagios server, e.g. website is up, ping times, custome scripts to interact woth network ports
 - NRPE (Nagios Remote Plugin Executor) Remote Plugins: run on actual servers being monitored, deeper insight, secured via ssl, indirect checks (tsting if db is available to web server)
 
-Install NRPE
+Install NRPE: 
+
+
+sudo apt-get update
+sudo apt-get install nagios-nrpe-server nagios-plugins
+
+To tell the node which nagios servers to accept checks from: (sudo) /etc/nagios/nrpe.cfg (append in the allowed_hosts list)
+sudo systemctl restart nagios-nrpe-server
+
+Install nrpe plugins on nagios server, check the version of nrpe on nagios server
+sudo apt-get update
+sudo apt-get install nagios-nrpe-plugin
+sudo cp /usr/lib/nagios/plugins/check_nrpe /usr/local/nagios/libexec/
+cd /usr/local/nagios/libexec/
+./check_nrpe -H 192.168.50.20 -c check_users
+
+Nagios Config:
+- One big file, multiple files in a directory
+
+
 
