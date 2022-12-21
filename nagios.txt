@@ -91,6 +91,9 @@ cd /usr/local/nagios/libexec/
 
 Nagios Config:
 - One big file, multiple files in a directory
+- -w - warning level, -c - critical level
+- contact 
 
-
-
+Monitor a server: 
+- configure web server with nagios
+- 
