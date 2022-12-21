@@ -97,3 +97,6 @@ Nagios Config:
 Monitor a server: 
 - configure web server with nagios
 - 
+
+Expand nagios installaition:
+- Add db host as well 
